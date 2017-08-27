@@ -256,7 +256,7 @@ format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-padding = 1
-exec = ~/.config/scripts//weather
+exec = ~/.config/scripts/weather.py
 
 [module/cpu]
 type = internal/cpu
