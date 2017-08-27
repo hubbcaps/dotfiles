@@ -1,0 +1,22 @@
+[user]
+	name = hubbcaps
+  email = hubcaps@hubcaps.tech
+  signingkey = BE3FF2A39E3DFB001E64A8F7CA1B1820E4CC1451
+[alias]
+  a = add
+  aa = add .
+  s = status
+  ec = config --global -e
+  co = checkout
+  cob = checkout -b
+  p = pull
+  po = pull origin
+  pom = pull origin master
+  pu = push
+  puo = push origin
+  puom = push origin master
+  c = !git commit -S -m
+  cm = !git add -A && git commit -S -m
+  wip = commit -S -am "WIP"
+  undo = reset HEAD~1 --mixed
+  amend = commit -S -a --amend

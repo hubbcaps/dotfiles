@@ -1,0 +1,288 @@
+[colors]
+background = #2b303b
+background-alt = #b08d94 
+background-unf = #65737e
+background-mod0 = #b48ead
+background-mod1 = #96b5b4
+background-mod2 = #ebcb8b
+background-alrt = #96b5b4
+
+foreground = #c0c5ce 
+foreground-alt = #c0c5ce
+primary = #c0c5ce
+secondary = #c0c5ce
+
+[bar/top]
+monitor = ${env:MONITOR:DP-4.8}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+modules-left = date 
+modules-center = i3
+modules-right = 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Hack:fontformat=truetype:size=8;1
+font-1 = FontAwesome:pixelsize=12;0
+
+wm-restack = i3
+
+[bar/right]
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+modules-left = date 
+modules-center = i3 
+modules-right = 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Hack:fontformat=truetype:size=8;1
+font-1 = FontAwesome:pixelsize=12;0
+wm-restack = i3
+
+[bar/left]
+monitor = ${env:MONITOR:DP-3}
+width = 100%
+height = 30 
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+modules-left = date 
+modules-center = i3
+modules-right = 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Hack:fontformat=truetype:size=8;1
+font-1 = FontAwesome:pixelsize=12;0
+
+wm-restack = i3
+
+[bar/main]
+monitor = ${env:MONITOR:DVI-I-1}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+modules-left = date weather 
+modules-center = i3 
+modules-right = mpd updates cpu memory pvolume
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Hack:fontformat=truetype:size=8;1
+font-1 = FontAwesome:pixelsize=12;0
+
+tray-position =right
+tray-padding = 11
+tray-transparent = false
+tray-maxsize = 18
+tray-detached = false
+wm-restack = i3
+
+[module/separator]
+type = custom/text
+content = |
+content-foreground = ${colors.foreground}
+
+[module/i3]
+type = internal/i3
+index-sort = true
+strip-wsnumbers = false
+pin-workspaces = true
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 0;
+
+format = <label-state>
+
+label-unfocused-background = ${colors.background-unf}
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = ${colors.background}
+
+label-focused = %icon%
+label-focused-foreground = ${colors.foreground} 
+label-focused-background = ${colors.background-alt}
+label-focused-underline = #c0c5ce
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1 
+
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background-alrt}
+label-urgent-padding = 1
+
+[module/mpd]
+type = internal/mpd
+
+interval = 1
+
+format-offline-background = ${colors.background}
+format-online-background = ${colors.background-mod0}
+toggle-off-foreground = #FF0000
+toggle-on-foreground = #FF0000
+
+host = 127.0.0.1
+port = 6600
+
+format-online = <label-song>
+format-online-padding = 1
+
+[module/date]
+type = internal/date
+interval = 5
+
+date-alt = "%Y-%m-%d"
+time = "%a %b %d, %I:%M %p"
+time-alt = %H:%M:%S
+
+format-padding = 1
+format-prefix-foreground = ${colors.foreground-alt}
+label = %date% %time%
+
+[module/title]
+type = internal/xwindow
+
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 2
+
+[module/updates]
+type = custom/script
+exec = $HOME/.config/scripts/updates.sh
+interval = 3600
+format = <label>
+label = "%output:0:30%"
+format-padding = 1
+
+[module/pvolume]
+type = custom/script
+interval = 1
+label = %output%
+label-padding = 1
+exec = ~/.config/scripts/volume.sh
+click-right = exec pavucontrol
+click-left = ~/.config/scripts/volume.sh --togmute
+scroll-up = ~/.config/scripts/volume.sh --up
+scroll-down = ~/.config/scripts/volume.sh --down
+
+[module/weather]
+type = custom/script
+interval = 3600
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-padding = 1
+exec = ~/.config/scripts//weather
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+label = %percentage%%
+label-foreground = ${colors.foreground}
+format-padding = 1
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+label = %percentage_used%%
+label-foreground = ${colors.foreground}
+format-padding = 1
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
