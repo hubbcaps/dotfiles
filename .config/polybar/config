@@ -170,7 +170,7 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 0;
 
-format = <label-state>
+format = <label-state> <label-mode>
 
 label-unfocused-background = ${colors.background-unf}
 label-mode = %mode%
