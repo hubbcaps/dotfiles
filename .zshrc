@@ -13,6 +13,7 @@
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs virtualenv)
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time background_jobs)
   ZSH_THEME="powerlevel9k/powerlevel9k"
+  #ZSH_THEME="amaze"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
