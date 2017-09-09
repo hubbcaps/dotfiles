@@ -32,8 +32,8 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "0"
 
-set $default_gaps_inner 0
-set $default_gaps_outer 0
+set $default_gaps_inner 10
+set $default_gaps_outer 10
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
@@ -59,13 +59,13 @@ bindsym $mod+Return exec --no-startup-id exec $HOME/.scripts/fullscreen_wrap.sh 
 bindsym $mod+q kill
 
 bindsym $mod+o exec --no-startup-id rofi -show run
-bindsym $mod+Shift+o exec --no-startup-id rofi -show window 
+bindsym $mod+Shift+o exec --no-startup-id rofi -show window
 
 bindsym --release $mod+p exec "scrot -s /home/hubcaps/nixfiles/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
 
 bindsym --release $mod+Shift+p exec "scrot /home/hubcaps/nixfiles/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
 
-bindsym $mod+shift+x exec "~/.config/scripts/lock.sh" 
+bindsym $mod+shift+x exec "~/.config/scripts/lock.sh"
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -153,20 +153,6 @@ mode "$mode_resize" {
     bindsym 1 mode "default", resize set 1000 600
     bindsym 2 mode "default", resize set 1500 600
     bindsym 3 mode "default", resize set 1200 1000
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-set $mode_power power
-bindsym Mod1+Control+l mode "$mode_power"
-mode "$mode_power" {
-    bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
-    bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
-    bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/i3exit suspend
-    bindsym h mode "default", exec --no-startup-id $HOME/.config/i3/i3exit hibernate
-    bindsym r mode "default", exec --no-startup-id $HOME/.config/i3/i3exit reboot
-    bindsym p mode "default", exec --no-startup-id $HOME/.config/i3/i3exit shutdown
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
