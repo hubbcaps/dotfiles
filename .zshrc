@@ -95,6 +95,7 @@ eval "$(rbenv init -)"
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper_lazy.sh
+source /home/hubcaps/src/scripts/multiplex
 
 export TERM="xterm-256color"
 
@@ -106,17 +107,3 @@ alias ssh='TERM=xterm-256color ssh'
 alias tmux='TERM=xterm-256color tmux'
 alias g='git'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# cd up to n dirs
-# using:  cd.. 10   cd.. dir
-function cd_up() {
-  case $1 in
-    *[!0-9]*)                                          # if no a number
-      cd $( pwd | sed -r "s|(.*/$1[^/]*/).*|\1|" )     # search dir_name in current path, if found - cd to it
-      ;;                                               # if not found - not cd
-    *)
-      cd $(printf "%0.0s../" $(seq 1 $1));             # cd ../../../../  (N dirs)
-    ;;
-  esac
-}
-alias 'cd..'='cd_up'                                # can not name function 'cd..'

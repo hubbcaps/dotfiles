@@ -16,7 +16,7 @@
   puo = push origin
   puom = push origin master
   c = !git commit -S -m
-  cm = !git add -A && git commit -S -m
+  cm = !git commit -S -am
   wip = commit -S -am "WIP"
   undo = reset HEAD~1 --mixed
   amend = commit -S -a --amend

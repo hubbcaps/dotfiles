@@ -33,7 +33,7 @@ set $ws9  "9"
 set $ws10 "0"
 
 set $default_gaps_inner 10
-set $default_gaps_outer 10
+set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
@@ -64,6 +64,9 @@ bindsym $mod+Shift+o exec --no-startup-id rofi -show window
 bindsym --release $mod+p exec "scrot -s /home/hubcaps/nixfiles/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
 
 bindsym --release $mod+Shift+p exec "scrot /home/hubcaps/nixfiles/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
+
+bindsym --release $mod+i exec "~/src/scripts/screencast.sh -r"
+bindsym --release $mod+Shift+i exec "pkill -f 'x11grab'"
 
 bindsym $mod+shift+x exec "~/.config/scripts/lock.sh"
 
