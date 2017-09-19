@@ -1,0 +1,19 @@
+#!/bin/sh
+
+function gazee
+{
+  BASE="$HOME/src/python/gazee"
+  cd $BASE
+
+  tmux start-server
+  tmux new-session -d -s fob -n vim/gazee
+  tmux new-window -t fob:1 -n local/context
+  tmux new-window -t fob:2 -n local/scratch
+
+  tmux send-keys -t fob:0 "cd $BASE; vim .devnotes" C-m
+  tmux send-keys -t fob:1 "cd $BASE; workon gazee" C-m
+  tmux send-keys -t fob:2 "cd $HOME" C-m
+
+  tmux select-window -t fob:0
+  tmux attach-session -t fob
+}
