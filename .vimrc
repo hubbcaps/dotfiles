@@ -42,6 +42,9 @@ nnoremap <F2> :set nonumber! norelativenumber!<CR>
 " <leader>h to toggle
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
+" Clear Search Hilighting
+nnoremap <leader>c <Esc>:noh <CR>
+
 " Syntastic Settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
