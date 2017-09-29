@@ -17,3 +17,20 @@ function gazee
   tmux select-window -t fob:0
   tmux attach-session -t fob
 }
+
+function social
+{
+  BASE="$HOME"
+  cd $BASE
+
+  tmux new-session -d -s social -n twitter
+  tmux new-window -t social:1 -n reddit
+  tmux new-window -t social:2 -n hackernews
+
+  tmux send-keys -t social:0 "rainbowstream" C-m
+  tmux send-keys -t social:1 "rtv --enable-media" C-m
+  tmux send-keys -t social:2 "haxor-news" C-m
+
+  tmux select-window -t social:0
+  tmux attach-session -t social
+}

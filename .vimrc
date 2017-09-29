@@ -3,6 +3,7 @@ filetype plugin indent on
 syntax on
 
 set backspace=indent,eol,start
+set foldmethod=indent
 set t_Co=256
 set background=dark
 set number
@@ -20,9 +21,13 @@ set noshowmode
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 set undodir=~/.vim/tmp,.
+let mapleader = ';'
 
 " NERDTree Settings
 map <C-l> :NERDTreeToggle<CR>
+
+" TabgBar Settings
+map <C-m> :TagbarToggle<CR>
 
 " Airline Settings
 let g:airline_powerline_fonts = 1
@@ -32,6 +37,10 @@ let g:airline#extensions#tabline#enabled = 1
 " Number Toggle Settings
 " Toggle number lines with <F2>
 nnoremap <F2> :set nonumber! norelativenumber!<CR>
+
+" Hardmode Toggle
+" <leader>h to toggle
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
