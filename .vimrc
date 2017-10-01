@@ -34,6 +34,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_ocean'
 let g:airline#extensions#tabline#enabled = 1
 
+" Easy Motion Settings
+let g:EasyMotion_startofline = 0
+let g:EasyMotion_smartcase = 1
+
 " Number Toggle Settings
 " Toggle number lines with <F2>
 nnoremap <F2> :set nonumber! norelativenumber!<CR>
