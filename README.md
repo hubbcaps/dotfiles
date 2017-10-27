@@ -1,5 +1,1 @@
 ![screen01](.dimages/01.png)
-![screen02](.dimages/02.jpg)
-![screen03](.dimages/03.png)
-![screen04](.dimages/04.png)
-![screen05](.dimages/05.jpg)
