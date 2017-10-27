@@ -63,10 +63,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+export PATH="$HOME/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -94,7 +91,7 @@ eval "$(rbenv init -)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper_lazy.sh
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
 source /home/hubcaps/src/scripts/multiplex
 
 export TERM="xterm-256color"
@@ -106,4 +103,4 @@ export BROWSER="qutebrowser"
 alias ssh='TERM=xterm-256color ssh'
 alias tmux='TERM=xterm-256color tmux'
 alias g='git'
-alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/.doots/ --work-tree=$HOME'

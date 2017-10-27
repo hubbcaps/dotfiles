@@ -1,19 +1,19 @@
 [colors]
-background = #2b303b
-background-alt = #b08d94 
+background = #312e39
+background-alt = #4f4b58
 background-unf = #65737e
 background-mod0 = #b48ead
 background-mod1 = #96b5b4
 background-mod2 = #ebcb8b
 background-alrt = #96b5b4
 
-foreground = #c0c5ce 
-foreground-alt = #c0c5ce
-primary = #c0c5ce
-secondary = #c0c5ce
+foreground = #c0a79a 
+foreground-alt = #c0a79a
+primary = #c0a79a
+secondary = #c0a79a
 
 [bar/top]
-monitor = ${env:MONITOR:DP-4.8}
+monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
 offset-x = 0%
@@ -46,7 +46,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/right]
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 30
 offset-x = 0%
@@ -78,7 +78,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/left]
-monitor = ${env:MONITOR:DP-3}
+monitor = ${env:MONITOR:DVI-I-1}
 width = 100%
 height = 30 
 offset-x = 0%
@@ -111,7 +111,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/main]
-monitor = ${env:MONITOR:DVI-I-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 30
 offset-x = 0%
@@ -180,7 +180,7 @@ label-mode-background = ${colors.background}
 label-focused = %icon%
 label-focused-foreground = ${colors.foreground} 
 label-focused-background = ${colors.background-alt}
-label-focused-underline = #c0c5ce
+label-focused-underline = #c0a79a
 label-focused-padding = 1
 
 label-unfocused = %icon%

@@ -1,3 +1,6 @@
+#include "/home/hubcaps/.xres/rofi"
+#include "/home/hubcaps/.xres/termcolors/synthwave"
+
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
@@ -6,56 +9,39 @@ Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-! rofi
-rofi.modi: run
-rofi.font: Hack 15
-rofi.width: 100
-rofi.lines: 7
-rofi.columns: 1
-rofi.opacity: 95
-!                    bg       fg      altbg    hlbg     hlfg
-rofi.color-normal: #2b303b, #96b5b4, #2b303b, #96b5b4, #2b303b
-rofi.color-urgent: #2b303b, #96b5b4, #2b303b, #96b5b4, #2b303b
-rofi.color-active: #2b303b, #96b5b4, #2b303b, #96b5b4, #2b303b
-rofi.color-window: #2b303b, #2b303b
-rofi.bw: 0
-rofi.location: 2
-rofi.padding: 100
-rofi.fuzzy: false
-
 ! special
-*.foreground:   #c0c5ce
-*.background:   #2b303b
-*.cursorColor:  #c0c5ce
+*.foreground:   fg
+*.background:   bg 
+*.cursorColor:  cyn
 
 ! black
-*.color0:       #2b303b
-*.color8:       #65737e
+*.color0:       blk
+*.color8:       bblk
 
 ! red
-*.color1:       #bf616a
-*.color9:       #bf616a
+*.color1:       red
+*.color9:       bred
 
 ! green
-*.color2:       #a3be8c
-*.color10:      #a3be8c
+*.color2:       grn
+*.color10:      bgrn
 
 ! yellow
-*.color3:       #ebcb8b
-*.color11:      #ebcb8b
+*.color3:       ylw
+*.color11:      bylw
 
 ! blue
-*.color4:       #8fa1b3
-*.color12:      #8fa1b3
+*.color4:       blu
+*.color12:      bblu
 
 ! magenta
-*.color5:       #b48ead
-*.color13:      #b48ead
+*.color5:       mag
+*.color13:      bmag
 
 ! cyan
-*.color6:       #96b5b4
-*.color14:      #96b5b4
+*.color6:       cyn
+*.color14:      bcyn
 
 ! white
-*.color7:       #c0c5ce
-*.color15:      #eff1f5
+*.color7:       wht
+*.color15:      bwht
