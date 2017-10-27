@@ -1,0 +1,17 @@
+! rofi
+rofi.modi: run
+rofi.font: Hack 15
+rofi.width: 100
+rofi.lines: 7
+rofi.columns: 1
+rofi.opacity: 95
+!                    bg       fg      altbg    hlbg     hlfg
+rofi.color-normal: #312e39, #c0a79a, #33303b, #c0a79a, #312e39
+rofi.color-urgent: #312e39, #c0a79a, #33303b, #c0a79a, #312e39
+rofi.color-active: #312e39, #c0a79a, #33303b, #c0a79a, #312e39
+rofi.color-window: #312e39, #c0a79a
+rofi.bw: 0
+rofi.location: 2
+rofi.padding: 100
+rofi.fuzzy: false
+
