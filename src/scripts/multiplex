@@ -34,3 +34,15 @@ function social
   tmux select-window -t social:0
   tmux attach-session -t social
 }
+
+function generic-work
+{
+  BASE="$HOME"
+  cd $BASE
+
+  tmux new-session -d -s generic -n local/scratch
+  tmux new-window -t generic:1 -n remote/somewhere
+
+  tmux select-window -t generic:0
+  tmux attach-session -t generic
+}

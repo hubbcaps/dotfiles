@@ -7,7 +7,7 @@ background-mod1 = #96b5b4
 background-mod2 = #ebcb8b
 background-alrt = #96b5b4
 
-foreground = #c0a79a 
+foreground = #c0a79a
 foreground-alt = #c0a79a
 primary = #c0a79a
 secondary = #c0a79a
@@ -21,9 +21,9 @@ offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-modules-left = date 
+modules-left = date
 modules-center = i3
-modules-right = 
+modules-right =
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -54,9 +54,9 @@ offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-modules-left = date 
-modules-center = i3 
-modules-right = 
+modules-left = date
+modules-center = i3
+modules-right =
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -80,15 +80,15 @@ wm-restack = i3
 [bar/left]
 monitor = ${env:MONITOR:DVI-I-1}
 width = 100%
-height = 30 
+height = 30
 offset-x = 0%
 offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-modules-left = date 
+modules-left = date
 modules-center = i3
-modules-right = 
+modules-right =
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -119,8 +119,8 @@ offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-modules-left = date weather 
-modules-center = i3 
+modules-left = date weather
+modules-center = i3
 modules-right = mpd updates cpu memory pvolume
 
 background = ${colors.background}
@@ -159,12 +159,12 @@ index-sort = true
 strip-wsnumbers = false
 pin-workspaces = true
 
-ws-icon-0 = 1; 
-ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
@@ -172,19 +172,19 @@ ws-icon-9 = 0;
 
 format = <label-state> <label-mode>
 
-label-unfocused-background = ${colors.background-unf}
+label-unfocused-background = ${colors.background-alt}
 label-mode = %mode%
 label-mode-padding = 1
 label-mode-background = ${colors.background}
 
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground} 
-label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-unf}
 label-focused-underline = #c0a79a
 label-focused-padding = 1
 
 label-unfocused = %icon%
-label-unfocused-padding = 1 
+label-unfocused-padding = 1
 
 label-visible = %icon%
 label-visible-underline = #555555

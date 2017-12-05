@@ -32,6 +32,11 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "0"
 
+workspace 1 output HDMI-0
+workspace 2 output HDMI-1
+workspace 3 output DVI-I-1
+workspace 4 output DVI-D-0
+
 set $default_gaps_inner 10
 set $default_gaps_outer 0
 gaps inner $default_gaps_inner
@@ -196,18 +201,13 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-new_window pixel 1
+new_window pixel 2
 smart_borders no_gaps
-#for_window [class=(?i)termite] border pixel 3
-
-for_window [class="(?i)display"] floating enable
-for_window [class="(?i)feh"] floating enable
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
-
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
@@ -217,44 +217,16 @@ for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 
 for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
-for_window [class="(?i)recordmydesktop"] floating enable
 
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
 assign [class="(?i)qute"]         $ws2
-assign [class="(?i)steam"]			  $ws3
 assign [class="(?i)vlc"]          $ws6
 assign [class="(?i)streamlink"]   $ws6
 
-#bar {
-##    verbose yes
-#    status_command i3blocks
-#    i3bar_command i3bar -t
-#    position top
-#    font pango:Hack, FontAwesome 11
-#    strip_workspace_numbers yes
-#    separator_symbol "|"
-#    bindsym button4 nop
-#    bindsym button5 nop
-#    tray_padding 0
-#    tray_output primary
-#    height 30
-#    colors {
-#        statusline         $darkwhite
-#        background         $black
-#        separator          $darkwhite
-#
-##                          BORDER       BACKGROUND   TEXT
-#        focused_workspace  $black       $black	     $darkwhite
-#        inactive_workspace $black       $black	     $white
-#        active_workspace   $black       $black	     $white
-#        urgent_workspace   $darkred     $darkred     $transparent
-#        binding_mode       $darkred     $darkred     $transparent
-#    }
-#}
-
 # AUTOSTART
+exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id killall polybar; polybar main;polybar top;polybar left;polybar right;
@@ -262,20 +234,8 @@ exec_always --no-startup-id killall polybar; polybar main;polybar top;polybar le
 exec --no-startup-id qutebrowser
 exec --no-startup-id compton -b
 exec --no-startup-id dunst &
-exec --no-startup-id udiskie
 exec --no-startup-id xedgewarp -b
-exec --no-startup-id steam
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
-
-#Steam games fix
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
+exec --no-startup-id xmodmap -e 'clear lock'
+exec --no-startup-id xset noblank
