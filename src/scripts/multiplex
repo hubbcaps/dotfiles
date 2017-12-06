@@ -1,48 +1,14 @@
 #!/bin/sh
 
-function gazee
+function workin
 {
-  BASE="$HOME/src/python/gazee"
-  cd $BASE
-
   tmux start-server
-  tmux new-session -d -s fob -n vim/gazee
-  tmux new-window -t fob:1 -n local/context
-  tmux new-window -t fob:2 -n local/scratch
+  tmux new-session -d -s fob -n scratch
+  tmux new-window -t fob:1 -n local/access
+  tmux new-window -t fob:2 -n local/pc
 
-  tmux send-keys -t fob:0 "cd $BASE; vim .devnotes" C-m
-  tmux send-keys -t fob:1 "cd $BASE; workon gazee" C-m
-  tmux send-keys -t fob:2 "cd $HOME" C-m
+  tmux send-keys -t fob:1 "cd ~/src/orion/aws/aws-direct-ad-users" C-m
 
   tmux select-window -t fob:0
   tmux attach-session -t fob
-}
-
-function social
-{
-  BASE="$HOME"
-  cd $BASE
-
-  tmux new-session -d -s social -n twitter
-  tmux new-window -t social:1 -n reddit
-  tmux new-window -t social:2 -n hackernews
-
-  tmux send-keys -t social:0 "rainbowstream" C-m
-  tmux send-keys -t social:1 "rtv --enable-media" C-m
-  tmux send-keys -t social:2 "haxor-news" C-m
-
-  tmux select-window -t social:0
-  tmux attach-session -t social
-}
-
-function generic-work
-{
-  BASE="$HOME"
-  cd $BASE
-
-  tmux new-session -d -s generic -n local/scratch
-  tmux new-window -t generic:1 -n remote/somewhere
-
-  tmux select-window -t generic:0
-  tmux attach-session -t generic
 }

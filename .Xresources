@@ -1,5 +1,5 @@
-#include "/home/hubcaps/.xres/rofi"
-#include "/home/hubcaps/.xres/termcolors/synthwave"
+#include "/home/jmoss/.xres/rofi"
+#include "/home/jmoss/.xres/termcolors/synthwave"
 
 Xft.autohint: 0
 Xft.antialias: 1

@@ -13,7 +13,7 @@ primary = #c0a79a
 secondary = #c0a79a
 
 [bar/top]
-monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:DP-1}
 width = 100%
 height = 30
 offset-x = 0%
@@ -46,7 +46,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/right]
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:DP-0}
 width = 100%
 height = 30
 offset-x = 0%
@@ -78,7 +78,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/left]
-monitor = ${env:MONITOR:DVI-I-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 30
 offset-x = 0%
@@ -111,7 +111,7 @@ font-1 = FontAwesome:pixelsize=12;0
 wm-restack = i3
 
 [bar/main]
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:DP-2}
 width = 100%
 height = 30
 offset-x = 0%
@@ -121,7 +121,7 @@ fixed-center = true
 
 modules-left = date weather
 modules-center = i3
-modules-right = mpd updates cpu memory pvolume
+modules-right = mpd updates cpu memory pvolume battery
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -210,6 +210,33 @@ port = 6600
 
 format-online = <label-song>
 format-online-padding = 1
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = Charging %percentage%%
+label-discharging = Discharging %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 [module/date]
 type = internal/date

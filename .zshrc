@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/hubcaps/.oh-my-zsh
+  export ZSH=/home/jmoss/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -92,15 +92,15 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export WORKON_HOME=~/.virtualenvs
 source $HOME/.local/bin/virtualenvwrapper_lazy.sh
-source /home/hubcaps/src/scripts/multiplex
+source /home/jmoss/src/scripts/multiplex
 
 export TERM="xterm-256color"
 
-export DEFAULT_USER=hubcaps
+export DEFAULT_USER=jmoss
 export VISUAL="vim"
 export BROWSER="qutebrowser"
 
 alias ssh='TERM=xterm-256color ssh'
 alias tmux='TERM=xterm-256color tmux'
 alias g='git'
-alias dots='/usr/bin/git --git-dir=$HOME/.doots/ --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'

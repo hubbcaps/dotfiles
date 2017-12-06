@@ -32,10 +32,9 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "0"
 
-workspace 1 output HDMI-0
-workspace 2 output HDMI-1
-workspace 3 output DVI-I-1
-workspace 4 output DVI-D-0
+workspace 1 output DP-0
+workspace 2 output HDMI-0
+workspace 4 output DP-2
 
 set $default_gaps_inner 10
 set $default_gaps_outer 0
@@ -73,7 +72,7 @@ bindsym --release $mod+Shift+p exec "scrot /home/hubcaps/pictures/sshot-$(date +
 bindsym --release $mod+i exec "~/src/scripts/screencast.sh -r"
 bindsym --release $mod+Shift+i exec "pkill -f 'x11grab'"
 
-bindsym $mod+shift+x exec "~/.config/scripts/lock.sh"
+bindsym $mod+shift+x exec "~/src/scripts/lock.sh"
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -239,3 +238,4 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id xmodmap -e 'clear lock'
 exec --no-startup-id xset noblank
+exec --no-startup-id blueberry-tray
