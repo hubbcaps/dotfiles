@@ -6,8 +6,16 @@ function workin
   tmux new-session -d -s fob -n scratch
   tmux new-window -t fob:1 -n local/access
   tmux new-window -t fob:2 -n local/pc
+  tmux new-window -t fob:3 -n local/stack
+  tmux new-window -t fob:4 -n local/solution
+  tmux new-window -t fob:5 -n local/deploy
+  tmux new-window -t fob:6 -n remote
+  tmux new-window -t fob:7 -n remote
 
   tmux send-keys -t fob:1 "cd ~/src/orion/aws/aws-direct-ad-users" C-m
+  tmux send-keys -t fob:3 "cd ~/src/orion/aws/stack-sftp" C-m
+  tmux send-keys -t fob:4 "cd ~/src/orion/aws/solutions/solution_sftp" C-m
+  tmux send-keys -t fob:5 "cd ~/src/orion/aws/deploy_sftp" C-m
 
   tmux select-window -t fob:0
   tmux attach-session -t fob

@@ -57,6 +57,12 @@ modules-left = date
 modules-center = i3
 modules-right =
 
+tray-position =right
+tray-padding = 11
+tray-transparent = false
+tray-maxsize = 18
+tray-detached = false
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 

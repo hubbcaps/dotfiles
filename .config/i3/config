@@ -65,9 +65,9 @@ bindsym $mod+q kill
 bindsym $mod+o exec --no-startup-id rofi -show run
 bindsym $mod+Shift+o exec --no-startup-id rofi -show window
 
-bindsym --release $mod+p exec "scrot -s /home/hubcaps/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
+bindsym --release $mod+p exec "scrot -s /home/jmoss/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
 
-bindsym --release $mod+Shift+p exec "scrot /home/hubcaps/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
+bindsym --release $mod+Shift+p exec "scrot /home/jmoss/pictures/sshot-$(date +%F-%I-%M-%S-{$RANDOM}).png -q 100"
 
 bindsym --release $mod+i exec "~/src/scripts/screencast.sh -r"
 bindsym --release $mod+Shift+i exec "pkill -f 'x11grab'"
