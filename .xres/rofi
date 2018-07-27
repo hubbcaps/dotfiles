@@ -1,6 +1,6 @@
 ! rofi
 rofi.modi: run
-rofi.font: Hack 15
+rofi.font: Iosevka Term 15
 rofi.width: 100
 rofi.lines: 7
 rofi.columns: 1

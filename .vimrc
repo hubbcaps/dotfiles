@@ -2,11 +2,12 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
+colorscheme wal
+
 set backspace=indent,eol,start
 set foldmethod=indent
 set t_Co=256
 set background=dark
-set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -30,8 +31,8 @@ map <C-l> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 
 " Airline Settings
-let g:airline_powerline_fonts = 1
-let g:airline_theme='ubaryd'
+let g:airline_powerline_fonts = 0
+let g:airline_theme='base16_atelierheath'
 let g:airline#extensions#tabline#enabled = 1
 
 " Easy Motion Settings

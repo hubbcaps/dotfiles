@@ -1,54 +1,15 @@
 [colors]
-background = #312e39
-background-alt = #4f4b58
-background-unf = #65737e
-background-mod0 = #b48ead
-background-mod1 = #96b5b4
-background-mod2 = #ebcb8b
-background-alrt = #96b5b4
-
-foreground = #c0a79a
-foreground-alt = #c0a79a
-primary = #c0a79a
-secondary = #c0a79a
-
-[bar/top]
-monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 30
-offset-x = 0%
-offset-y = 0%
-radius = 0.0
-fixed-center = true
-
-modules-left = date
-modules-center = i3
-modules-right =
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = Hack:fontformat=truetype:size=8;1
-font-1 = "Font Awesome 5 Free:style=Regularpixelsize=12;1"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
-font-3 = "Font Awesome 5 Free Brands:pixelsize=12;1"
-
-wm-restack = i3
+background = ${xrdb:color0:#222}
+background-unf = ${xrdb:color5:#222}
+background-alt = ${xrdb:color8:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color4:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+background-alrt = ${xrdb:color3:#222}
 
 [bar/right]
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:HDMI2}
 width = 100%
 height = 30
 offset-x = 0%
@@ -56,9 +17,9 @@ offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-modules-left = date
+modules-left = date weather
 modules-center = i3
-modules-right =
+modules-right = mpd cpu memory
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -75,50 +36,17 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Hack:fontformat=truetype:size=8;1
-font-1 = "Font Awesome 5 Free:style=Regularpixelsize=12;1"
+font-0 = "Iosevka Term:fontformat=truetype:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=12;1"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
 font-3 = "Font Awesome 5 Free Brands:pixelsize=12;1"
-
-wm-restack = i3
-
-[bar/left]
-monitor = ${env:MONITOR:DVI-I-1}
-width = 100%
-height = 30
-offset-x = 0%
-offset-y = 0%
-radius = 0.0
-fixed-center = true
-
-modules-left = date
-modules-center = i3
-modules-right =
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = Hack:fontformat=truetype:size=8;1
-font-1 = "Font Awesome 5 Free:style=Regularpixelsize=12;1"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
-font-3 = "Font Awesome 5 Free Brands:pixelsize=12;1"
+font-4 = "Source Han Sans JP:pixelsize=10;1"
+font-5 = "Hack Nerd Font Mono:style=Regular:pixelsize=12;1"
 
 wm-restack = i3
 
 [bar/main]
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:HDMI1}
 width = 100%
 height = 30
 offset-x = 0%
@@ -145,16 +73,55 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Hack:fontformat=truetype:size=8;1
+font-0 = "Iosevka Term:fontformat=truetype:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Regularpixelsize=10;1"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-3 = "Font Awesome 5 Free Brands:pixelsize=10;1"
+font-4 = "Source Han Sans JP:pixelsize=10;1"
+font-5 = "Hack Nerd Font Mono:style=Regular:pixelsize=12;1"
 
 tray-position =right
 tray-padding = 11
 tray-transparent = false
 tray-maxsize = 18
 tray-detached = false
+wm-restack = i3
+
+[bar/left]
+monitor = ${env:MONITOR:VGA1}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+modules-left = date weather
+modules-center = i3
+modules-right = mpd cpu memory
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Iosevka Term:fontformat=truetype:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Regularpixelsize=12;1"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
+font-3 = "Font Awesome 5 Free Brands:pixelsize=12;1"
+font-4 = "Source Han Sans JP:pixelsize=10;1"
+font-5 = "Hack Nerd Font Mono:style=Regular:pixelsize=12;1"
+
 wm-restack = i3
 
 [module/separator]
@@ -168,35 +135,35 @@ index-sort = true
 strip-wsnumbers = false
 pin-workspaces = true
 
-ws-icon-0 = 1;╪
-ws-icon-1 = 2;╦
-ws-icon-2 = 3;╧
-ws-icon-3 = 4;║
-ws-icon-4 = 5;╢
-ws-icon-5 = 6;╟
-ws-icon-6 = 7;╔
-ws-icon-7 = 8;╗
-ws-icon-8 = 9;╘
-ws-icon-9 = 0;╛
+ws-icon-0 = 1;I
+ws-icon-1 = 2;II
+ws-icon-2 = 3;III
+ws-icon-3 = 4;IV
+ws-icon-4 = 5;V
+ws-icon-5 = 6;VI
+ws-icon-6 = 7;VII
+ws-icon-7 = 8;VIII
+ws-icon-8 = 9;IX
+ws-icon-9 = 0;X
 
 format = <label-state> <label-mode>
 
 label-unfocused-background = ${colors.background-alt}
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-background = ${colors.background}
+label-mode-background = ${colors.background-alrt}
 
 label-focused = %icon%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-unf}
-label-focused-underline = #c0a79a
+label-focused-underline = ${colors.secondary}
 label-focused-padding = 1
 
 label-unfocused = %icon%
 label-unfocused-padding = 1
 
 label-visible = %icon%
-label-visible-underline = #555555
+label-visible-underline = ${colors.secondary}
 label-visible-padding = 1
 
 label-urgent = %icon%
@@ -210,7 +177,7 @@ type = internal/mpd
 interval = 1
 
 format-offline-background = ${colors.background}
-format-online-background = ${colors.background-mod0}
+format-online-background = #4c9882
 toggle-off-foreground = #FF0000
 toggle-on-foreground = #FF0000
 
@@ -260,12 +227,11 @@ scroll-down = ~/.config/scripts/volume.sh --down
 
 [module/weather]
 type = custom/script
-interval = 3600
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+interval = 1
 format-padding = 1
-exec = ~/.config/scripts/weather.py
+exec = ~/.config/scripts/utfweather.py
+click-left = ~/.config/scripts/utfweather.py -t
+click-right = ~/.config/scripts/utfweather.py -n
 
 [module/cpu]
 type = internal/cpu

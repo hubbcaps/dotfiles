@@ -1,7 +1,10 @@
 # vim:filetype=i3
 # i3 config file (v4)
-set $mod Mod4
+set $mod Mod1
 set $editor termite
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
 set_from_resource $black       color0  #000000
 set_from_resource $darkblack   color8  #000000
@@ -51,12 +54,21 @@ floating_maximum_size -1 x -1
 
 font pango:Hack, FontAwesome 12
 
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-client.focused          $green      $black      $darkwhite  $darkblack  $blue
-client.unfocused        $black      $black      $white      $darkblack  $darkblack
-client.focused_inactive $black      $black      $white      $darkblack  $darkblack
-client.urgent           $darkred    $darkred    $black      $darkred    $darkred
-client.background       $black
+#client.focused          $green      $black      $darkwhite  $darkblack  $blue
+#client.unfocused        $black      $black      $white      $darkblack  $darkblack
+#client.focused_inactive $black      $black      $white      $darkblack  $darkblack
+#client.urgent           $darkred    $darkred    $black      $darkred    $darkred
+#client.background       $black
 
 floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id exec $editor
@@ -141,6 +153,9 @@ bindsym $mod+Shift+v exec --no-startup-id "killall pavucontrol; $HOME/.scripts/f
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 bindsym $mod+n exec --no-startup-id thunar
 
 set $mode_resize resize
@@ -222,17 +237,14 @@ for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 34px
 
 assign [class="(?i)qute"]         $ws2
-assign [class="(?i)vlc"]          $ws6
-assign [class="(?i)streamlink"]   $ws6
 
 # AUTOSTART
-exec_always --no-startup-id xrdb -load ~/.Xresources
+exec --no-startup-id /home/hubcaps/.screenlayout/default.sh
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id killall polybar; polybar main;polybar top;polybar left;polybar right;
+exec_always --no-startup-id killall polybar; polybar main;polybar right; polybar left;
 
 exec --no-startup-id qutebrowser
-exec --no-startup-id compton -b
+exec --no-startup-id compton -b --inactive-dim .1
 exec --no-startup-id dunst &
 exec --no-startup-id xedgewarp -b
 exec --no-startup-id xset -dpms

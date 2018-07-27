@@ -19,6 +19,7 @@ xset noblank
 xset r rate 200 20
 
 xmodmap -e 'clear lock'
+setxkbmap -option caps:escape
 
 udiskie &
 

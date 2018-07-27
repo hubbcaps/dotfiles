@@ -1,5 +1,5 @@
 [options]
-font = Hack 12
+font = Iosevka Term 12
 browser = qutebrowser
 clickable_url = true
 dynamic_title = true
@@ -8,43 +8,43 @@ scrollback_lines = 999999
 scroll_on_keystroke = true
 scroll_on_output = false
 urgent_on_bell = true
+cursor_blink = on
 
 [colors]
 
 # special
-foreground      = #c0a79a
-foreground_bold = #c0a79a
-cursor          = #c0a79a
-# background      = #312e39
-background      = rgba(49, 46, 57, 0.7)
+foreground      = ${xrdb:color7:#222}
+foreground_bold = ${xrdb:color7:#222}
+cursor          = ${xrdb:color7:#222}
+background      = ${xrdb:color0:#222}
 # black
-color0  = #33303b
-color8  = #4f4b58
+color0  = ${xrdb:color0:#222}
+color8  = ${xrdb:color8:#222}
 
 # red
-color1  = #87404f
-color9  = #87404f
+color1  = ${xrdb:color1:#222}
+color9  = ${xrdb:color9:#222}
 
 # green
-color2  = #4c9882
-color10 = #4c9882
+color2  = ${xrdb:color2:#222} 
+color10 = ${xrdb:color10:#222}
 
 # yellow
-color3  = #71949a
-color11 = #71949a
+color3  = ${xrdb:color3:#222}
+color11 = ${xrdb:color11:#222}
 
 # blue
-color4  = #615772
-color12 = #615772
+color4  = ${xrdb:color4:#222}
+color12 = ${xrdb:color12:#222}
 
 # magenta
-color5  = #783e57
-color13 = #783e57
+color5  = ${xrdb:color5:#222}
+color13 = ${xrdb:color13:#222}
 
 # cyan
-color6  = #554757
-color14 = #554757
+color6  = ${xrdb:color6:#222}
+color14 = ${xrdb:color14:#222}
 
 # white
-color7  = #c0a79a
-color15 = #c0a79a
+color7  = ${xrdb:color7:#222}
+color15 = ${xrdb:color15:#222}
